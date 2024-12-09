@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview avec le Directeur du Collège</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            color: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: slideDown 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #6200ee, #9c27b0, #6200ee);
+            animation: gradientSlide 3s linear infinite;
+            background-size: 200% 100%;
+        }
+
+        .header h1 {
+            color: #333;
+            margin: 0;
+            font-size: 2em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header span {
+            background: linear-gradient(45deg, #6200ee, #9c27b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .intro {
+            text-align: center;
+            margin: 30px auto;
+            font-size: 1.1em;
+            color: #666;
+            max-width: 600px;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .image-container {
+            margin: 40px auto;
+            text-align: center;
+            animation: scaleIn 0.8s ease-out;
+            position: relative;
+        }
+
+        .director-img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .director-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .question-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: slideUp 0.5s ease-out;
+            animation-fill-mode: both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-container:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .question-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #6200ee, #9c27b0);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        .question-container:hover::after {
+            transform: scaleX(1);
+        }
+
+        .question {
+            font-weight: 600;
+            color: #6200ee;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .question::before {
+            content: attr(data-number);
+            background: linear-gradient(135deg, #6200ee, #9c27b0);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 0.9em;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(98, 0, 238, 0.3);
+        }
+
+        .question-container:hover .question::before {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .answer {
+            line-height: 1.8;
+            color: #444;
+            margin-left: 47px;
+            font-size: 1.05em;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid rgba(98, 0, 238, 0.2);
+            transition: border-left-color 0.3s ease;
+        }
+
+        .question-container:hover .answer {
+            border-left-color: #6200ee;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 50px;
+            font-size: 16px;
+            color: #fff;
+            background-color:#6200ee;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #7821f1;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes gradientSlide {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .header {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 1.5em;
+            }
+            .question-container {
+                padding: 20px;
+            }
+            .answer {
+                margin-left: 35px;
+            }
+            .question::before {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>INTERVIEW AVEC <span>LE DIRECTEUR DU COLLÈGE</span></h1>
+    </div>
+    
+    <div class="intro">
+        Nous avons l'honneur d'accueillir un invité spécial dans la première interview de notre journal scolaire.
+    </div>
+
+    <div class="image-container">
+        <img src="directeur.jpg" alt="Le Directeur du Collège" class="director-img">
+    </div>
+
+    <div class="question-container">
+        <div class="question" data-number="1">Avant tout, merci d'avoir accepté notre invitation. Pouvez-vous commencer par une présentation de vous-même ?</div>
+        <div class="answer">Merci pour l'invitation. Je m'appelle abdo el aziz el kondossi, et je suis le directeur de cet établissement depuis 4 années. J'ai une longue expérience dans le domaine de l'éducation.</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question" data-number="2">Voudriez-vous nous parler de votre carrière professionnel ?</div>
+        <div class="answer">J'ai commencé en tant qu'enseignant, puis j'ai évolué vers l'administration éducative, occupant plusieurs postes avant de devenir directeur de cet établissement.</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question" data-number="3">Comment gérez-vous l'établissement ?</div>
+        <div class="answer">Je m'appuie sur le travail d'équipe et je veille à maintenir une communication constante avec les élèves, les enseignants et les parents afin de créer un environnement éducatif motivant.</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question" data-number="4">Pourriez-vous nous donner quelques statistiques sur l'établissement ?</div>
+        <div class="answer">Nous comptons actuellement environ [nombre d'élèves] élèves et [nombre d'enseignants] enseignants, avec un taux de réussite de [pourcentage].</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question" data-number="5">Quel est votre projet futur pour l'établissement ?</div>
+        <div class="answer">Nous prévoyons d'améliorer la qualité de l'enseignement en intégrant les technologies dans les salles de classe et en développant des programmes de soutien pour les élèves en difficulté.</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question" data-number="6">Quel conseil donneriez-vous aux élèves de l'établissement ?</div>
+        <div class="answer">Je leur conseille de travailler avec sérieux, d'organiser leur temps et de profiter de toutes les opportunités éducatives offertes par l'école.</div>
+    </div>
+
+    <h1>Téléchargez votre fichier PDF</h1>
+    <a href="votre-fichier.pdf" class="download-button" download>Télécharger le fichier PDF</a>
+
+</body>
+</html>

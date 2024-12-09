@@ -1,0 +1,25 @@
+.speaker-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.speaker-icon:hover {
+    transform: scale(1.1);
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.question .audio-controls {
+    margin-left: auto;
+}
+
+.answer .audio-controls {
+    margin-top: 10px;
+}

@@ -42,7 +42,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #6200ee, #9c27b0, #6200ee);
+            background: linear-gradient(90deg, #0066cc, #1e88e5, #0066cc);
             animation: gradientSlide 3s linear infinite;
             background-size: 200% 100%;
         }
@@ -56,7 +56,7 @@
         }
 
         .header span {
-            background: linear-gradient(45deg, #6200ee, #9c27b0);
+            background: linear-gradient(45deg, #0066cc, #1e88e5);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -118,7 +118,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, #6200ee, #9c27b0);
+            background: linear-gradient(90deg, #0066cc, #1e88e5);
             transform: scaleX(0);
             transition: transform 0.3s ease;
             transform-origin: left;
@@ -130,7 +130,7 @@
 
         .question {
             font-weight: 600;
-            color: #6200ee;
+            color: #0066cc;
             margin-bottom: 15px;
             font-size: 1.2em;
             display: flex;
@@ -140,7 +140,7 @@
 
         .question::before {
             content: attr(data-number);
-            background: linear-gradient(135deg, #6200ee, #9c27b0);
+            background: linear-gradient(135deg, #0066cc, #1e88e5);
             color: white;
             width: 32px;
             height: 32px;
@@ -152,7 +152,7 @@
             font-size: 0.9em;
             flex-shrink: 0;
             transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(98, 0, 238, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
         }
 
         .question-container:hover .question::before {
@@ -166,12 +166,12 @@
             font-size: 1.05em;
             position: relative;
             padding-left: 20px;
-            border-left: 2px solid rgba(98, 0, 238, 0.2);
+            border-left: 2px solid rgba(0, 102, 204, 0.2);
             transition: border-left-color 0.3s ease;
         }
 
         .question-container:hover .answer {
-            border-left-color: #6200ee;
+            border-left-color: #0066cc;
         }
 
         .download-button {
@@ -180,14 +180,14 @@
             margin-top: 50px;
             font-size: 16px;
             color: #fff;
-            background-color:#6200ee;
+            background-color: #0066cc;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
         }
         .download-button:hover {
-            background-color: #7821f1;
+            background-color: #1e88e5;
         }
 
         @keyframes slideDown {
